@@ -1,8 +1,8 @@
-关于神经网络的一切（迫真）
+关于神经网络的一切
 
 All About Neural Network（AANN）
 
-2021.04.25
+2021.05.29
 
 Coldwind
 
@@ -97,951 +97,971 @@ Forum的人应该知道我），彼时的文章和书籍很少，主要就是ULK
 
 -   "**其他**"：其他与NN相关的东西，大部分未完成或者有待调整。
 
-**目录**
+目录
 
-一、 概念&定义 20
+一、 概念&定义 21
 
-[（一） 希腊字母列表 20](\l)
+[（一） 希腊字母列表 21](\l)
 
-[（二） 微积分 21](\l)
+[（二） 数学符号 22](\l)
 
-[1． 导数和积分 21](\l)
+[（三） 微积分 22](\l)
 
-[2． 链式法则 22](\l)
+[1． 导数和积分 22](\l)
 
-[3． 偏导数 22](\l)
+[2． 链式法则 23](\l)
 
-[4． 梯度（Gradient） 23](\l)
+[3． 偏导数 23](\l)
 
-[（三） 线性代数/几何学 23](\l)
+[4． 梯度（Gradient） 24](\l)
 
-[1． 张量/标量/向量/矩阵 23](\l)
+[（四） 线性代数/几何学 24](\l)
 
-[2． 特征向量/特征值 24](\l)
+[1． 张量/标量/向量/矩阵 25](\l)
 
-[3． 逐点操作 24](\l)
+[2． 特征向量/特征值 25](\l)
 
-[4． 欧式距离 25](\l)
+[3． 逐点操作 25](\l)
 
-[5． 余弦距离（余弦相似度） 25](\l)
+[4． 欧式距离 26](\l)
 
-[6． 曼哈顿距离 26](\l)
+[5． 余弦距离（余弦相似度） 26](\l)
 
-[7． 闵可夫斯基距离 26](\l)
+[6． 曼哈顿距离 27](\l)
 
-[8． 范数 26](\l)
+[7． 闵可夫斯基距离 27](\l)
 
-[9． 齐次坐标 27](\l)
+[8． 范数 27](\l)
 
-[10． 仿射变换（Affine Transformation） 29](\l)
+[9． 齐次坐标 28](\l)
 
-[（四） 概率论 29](\l)
+[10． 仿射变换（Affine Transformation） 30](\l)
 
-[1． 概率 30](\l)
+[（五） 概率论 31](\l)
 
-[2． 条件概率 30](\l)
+[1． 概率 31](\l)
 
-[3． 贝叶斯定理 30](\l)
+[2． 条件概率 31](\l)
 
-[4． 期望值（EV） 31](\l)
+[3． 贝叶斯定理 31](\l)
 
-[5． 概率密度函数 (PDF) 31](\l)
+[4． 期望值（EV） 32](\l)
 
-[6． 累积分布函数 (CDF) 31](\l)
+[5． 概率密度函数 (PDF) 33](\l)
 
-[7． 概率质量函数 32](\l)
+[6． 累积分布函数 (CDF) 33](\l)
 
-[8． 连续分级概率评分（CRPS） 32](\l)
+[7． 概率质量函数 33](\l)
 
-[9． 分位数 (Quantile) 32](\l)
+[8． 连续分级概率评分（CRPS） 33](\l)
 
-[10． 独立 33](\l)
+[9． 分位数 (Quantile) 34](\l)
 
-[11． 独立同分布 33](\l)
+[10． 独立 34](\l)
 
-[12． 联合分布 33](\l)
+[11． 独立同分布 35](\l)
 
-[13． 伯努利分布（0-1分布） 34](\l)
+[12． 联合分布 35](\l)
 
-[14． 二项分布 34](\l)
+[13． 伯努利分布（0-1分布） 35](\l)
 
-[15． 泊松分布 34](\l)
+[14． 二项分布 36](\l)
 
-[16． 指数分布 35](\l)
+[15． 泊松分布 36](\l)
 
-[17． 伽玛分布 36](\l)
+[16． 指数分布 37](\l)
 
-[18． 正态分布（高斯分布） 37](\l)
+[17． 伽玛分布 38](\l)
 
-[19． 学生t分布 37](\l)
+[18． 正态分布（高斯分布） 38](\l)
 
-[20． 多元正态分布 39](\l)
+[19． 学生t分布 39](\l)
 
-[（五） 信息论 39](\l)
+[20． 多元正态分布 41](\l)
 
-[1． 信息熵（Entropy） 39](\l)
+[（六） 信息论 41](\l)
 
-[2． 联合熵（Joint entropy） 40](\l)
+[1． 信息熵（Entropy） 41](\l)
 
-[3． 条件熵（Conditional entropy） 40](\l)
+[2． 联合熵（Joint entropy） 42](\l)
 
-[4． 相对熵（Relative entropy） 41](\l)
+[3． 条件熵（Conditional entropy） 42](\l)
 
-[5． 交叉熵（Cross entropy） 41](\l)
+[4． 相对熵（Relative entropy） 43](\l)
 
-[（六） 统计学 42](\l)
+[5． 交叉熵（Cross entropy） 43](\l)
 
-[1． 方差（Variance） 42](\l)
+[6． 汉明距离（Hamming Distance） 43](\l)
 
-[2． 标准差（Standard Deviation） 42](\l)
+[（七） 统计学 44](\l)
 
-[3． 协方差（Covariance） 42](\l)
+[1． 方差（Variance） 44](\l)
 
-[4． 自相关（Auto correlation） 43](\l)
+[2． 标准差（Standard Deviation） 44](\l)
 
-[5． 互相关（Correlation） 44](\l)
+[3． 协方差（Covariance） 45](\l)
 
-[6． 蒙特卡洛法 / 拉斯维加斯法 44](\l)
+[4． 自相关（Auto correlation） 45](\l)
 
-[7． 马尔可夫链（Markov Chain） 44](\l)
+[5． 互相关（Correlation） 46](\l)
 
-[8． 回归分析 44](\l)
+[6． 蒙特卡洛法 / 拉斯维加斯法 46](\l)
 
-[9． 线性回归（Linear Regression） 45](\l)
+[7． 马尔可夫链（Markov Chain） 46](\l)
 
-[10． 逻辑回归（Logistic Regression） 45](\l)
+[8． 回归分析 46](\l)
 
-[11． softmax回归 45](\l)
+[9． 线性回归（Linear Regression） 47](\l)
 
-[12． 最大似然估计（MLE） 45](\l)
+[10． 逻辑回归（Logistic Regression） 47](\l)
 
-[（七） 数字信号处理 46](\l)
+[11． softmax回归 47](\l)
 
-[1． 傅立叶变换 46](\l)
+[12． 最大似然估计（MLE） 48](\l)
 
-[2． 离散傅立叶变换 46](\l)
+[（八） 数字信号处理 48](\l)
 
-[3． 快速傅立叶变换 46](\l)
+[1． 傅立叶变换 48](\l)
 
-[4． 基波和谐波 46](\l)
+[2． 离散傅立叶变换 48](\l)
 
-[5． 滤波器 47](\l)
+[3． 快速傅立叶变换 48](\l)
 
-[6． FIR滤波器 47](\l)
+[4． 基波和谐波 49](\l)
 
-[7． IIR滤波器 47](\l)
+[5． 滤波器 49](\l)
 
-[8． 小波变换 47](\l)
+[6． FIR滤波器 49](\l)
 
-[9． ACF（自相关函数） 47](\l)
+[7． IIR滤波器 49](\l)
 
-[10． XCF（互相关函数） 48](\l)
+[8． 小波变换 49](\l)
 
-[（八） 机器学习 48](\l)
+[9． ACF（自相关函数） 50](\l)
 
-[1． 监督学习 49](\l)
+[10． XCF（互相关函数） 50](\l)
 
-[2． 统计分类 49](\l)
+[（九） NN相关 50](\l)
 
-[3． 回归分析 50](\l)
+[1． 数据集 50](\l)
 
-[4． 无监督学习 50](\l)
+[2． 层 51](\l)
 
-[5． 聚类分析 50](\l)
+[3． 参数和FLOPs 51](\l)
 
-[6． 强化学习 51](\l)
+[4． Ground Truth 52](\l)
 
-[7． SVM 51](\l)
+[5． 置信度 52](\l)
 
-[8． k-means 52](\l)
+[6． One-hot标签 52](\l)
 
-[9． 感知器 52](\l)
+[7． 降维/升维 52](\l)
 
-[10． 朴素贝叶斯方法 53](\l)
+[8． 上采样/下采样 53](\l)
 
-[11． 决策树 53](\l)
+[9． 编码器/解码器 53](\l)
 
-[12． 随机森林 54](\l)
+[10． 开集/闭集 53](\l)
 
-[13． kNN算法 54](\l)
+[11． 类内/类间 53](\l)
 
-[14． 隐马尔可夫模型 55](\l)
+[12． 二分类任务衡量标准 53](\l)
 
-[15． 神经网络 56](\l)
+[13． 感受野 55](\l)
 
-[（九） NN相关 56](\l)
+[14． 表现力 55](\l)
 
-[1． 数据集 56](\l)
+[15． 嵌入 55](\l)
 
-[2． 层 57](\l)
+[16． 二分类/多分类/多标签分类 55](\l)
 
-[3． 参数和FLOPs 58](\l)
+[17． 骨干网络（Backbone） 56](\l)
 
-[4． Ground Truth 58](\l)
+[18． 分布（Distribution） 56](\l)
 
-[5． 置信度 58](\l)
+[（十） 超参数 58](\l)
 
-[6． One-hot标签 58](\l)
+[1． 学习率 58](\l)
 
-[7． 降维/升维 59](\l)
+[2． Dropout Ratio 58](\l)
 
-[8． 上采样/下采样 59](\l)
+[3． Batch size 58](\l)
 
-[9． 编码器/解码器 59](\l)
+[（十一） NN训练相关 58](\l)
 
-[10． 开集/闭集 59](\l)
+[1． Epoch / Batch 58](\l)
 
-[11． 类内/类间 59](\l)
+[2． 过拟合（Overfit） 59](\l)
 
-[12． 二分类任务衡量标准 60](\l)
+[3． 学习率衰减 59](\l)
 
-[13． 感受野 61](\l)
+[4． 权值衰减 59](\l)
 
-[14． 表现力 61](\l)
+[5． 梯度消失 59](\l)
 
-[15． 嵌入 61](\l)
+[6． 超参数 60](\l)
 
-[16． 二分类/多分类/多标签分类 62](\l)
+[7． 标准化（Normalization） 60](\l)
 
-[17． 骨干网络（Backbone） 62](\l)
+[8． 泛化（Generalization） 60](\l)
 
-[18． 分布（Distribution） 62](\l)
+[（十二） CNN相关 60](\l)
 
-[（十） 超参数 64](\l)
+[1． 全连接层 60](\l)
 
-[1． 学习率 64](\l)
+[2． 卷积层 60](\l)
 
-[2． Dropout Ratio 64](\l)
+[3． 池化层 60](\l)
 
-[3． Batch size 64](\l)
+[4． 卷积核 60](\l)
 
-[（十一） NN训练相关 64](\l)
+[5． 特征图 61](\l)
 
-[1． Epoch / Batch 64](\l)
+[6． 填充（Padding） 61](\l)
 
-[2． 过拟合（Overfit） 65](\l)
+[7． 步幅（Stride） 61](\l)
 
-[3． 学习率衰减 65](\l)
+[8． 通道（Channel） 61](\l)
 
-[4． 权值衰减 65](\l)
+[二、 Python相关 62](\l)
 
-[5． 梯度消失 65](\l)
+[（一） 包、模块、属性 62](\l)
 
-[6． 超参数 66](\l)
+[（二） 类和对象 64](\l)
 
-[7． 标准化（Normalization） 66](\l)
+[1． 对象 64](\l)
 
-[8． 泛化（Generalization） 66](\l)
+[2． 类=对象 64](\l)
 
-[（十二） CNN相关 66](\l)
+[3． metaclass 65](\l)
 
-[1． 全连接层 66](\l)
+[4． 实例化的过程 66](\l)
 
-[2． 卷积层 66](\l)
+[（三） 类 67](\l)
 
-[3． 池化层 66](\l)
+[1． Final和Virtual 67](\l)
 
-[4． 卷积核 66](\l)
+[2． 抽象基类 69](\l)
 
-[5． 特征图 67](\l)
+[3． 内嵌抽象类（Collections ABC） 70](\l)
 
-[6． 填充（Padding） 67](\l)
+[4． 内嵌类型（built-in types） 72](\l)
 
-[7． 步幅（Stride） 67](\l)
+[5． 类的层次 72](\l)
 
-[8． 通道（Channel） 67](\l)
+[（四） 泛型别名 73](\l)
 
-[二、 Python相关 68](\l)
+[（五） 方法 74](\l)
 
-[（一） 包、模块、属性 68](\l)
+[1． 标准库抽象类、内嵌函数、类特殊方法 74](\l)
 
-[（二） 类和对象 70](\l)
+[2． 内嵌函数（Built-in Functions） 75](\l)
 
-[1． 对象 70](\l)
+[3． 类特殊方法（Special method） 77](\l)
 
-[2． 类=对象 70](\l)
+[（1） 基本方法 77](\l)
 
-[3． metaclass 71](\l)
+[（2） 属性访问 78](\l)
 
-[4． 实例化的过程 72](\l)
+[（3） 其他 78](\l)
 
-[（三） 类 73](\l)
+[（4） with语句上下文 79](\l)
 
-[1． Final和Virtual 73](\l)
+[（5） 协程相关 79](\l)
 
-[2． 抽象基类 75](\l)
+[4． 修饰符 79](\l)
 
-[3． 内嵌抽象类（Collections ABC） 76](\l)
+[（六） 迭代器 80](\l)
 
-[4． 内嵌类型（built-in types） 78](\l)
+[1． 定义 81](\l)
 
-[5． 类的层次 78](\l)
+[（1） iterable 81](\l)
 
-[（四） 泛型别名 79](\l)
+[（2） iterator 81](\l)
 
-[（五） 方法 80](\l)
+[（3） generator 82](\l)
 
-[1． 标准库抽象类、内嵌函数、类特殊方法 80](\l)
+[（4） generator iterator 82](\l)
 
-[2． 内嵌函数（Built-in Functions） 81](\l)
+[2． 内嵌抽象基类 82](\l)
 
-[3． 类特殊方法（Special method） 83](\l)
+[（1） Iterable 82](\l)
 
-[（1） 基本方法 83](\l)
+[（2） Iterator 83](\l)
 
-[（2） 属性访问 84](\l)
+[（3） Reversible 83](\l)
 
-[（3） 其他 84](\l)
+[（4） Generator 83](\l)
 
-[（4） with语句上下文 85](\l)
+[3． 类特殊方法 83](\l)
 
-[（5） 协程相关 85](\l)
+[（七） 多进程 84](\l)
 
-[4． 修饰符 85](\l)
+[三、 框架&接口 84](\l)
 
-[（六） 迭代器 86](\l)
+[（一） 框架简介 84](\l)
 
-[1． 定义 87](\l)
+[1． 传统库 85](\l)
 
-[（1） iterable 87](\l)
+[2． 通用框架 85](\l)
 
-[（2） iterator 87](\l)
+[3． 专用框架 86](\l)
 
-[（3） generator 87](\l)
+[4． 边缘计算 87](\l)
 
-[（4） generator iterator 88](\l)
+[5． 快捷接口 88](\l)
 
-[2． 内嵌抽象基类 88](\l)
+[（二） 不同格式间的转换 88](\l)
 
-[（1） Iterable 88](\l)
+[1． 文件格式 88](\l)
 
-[（2） Iterator 88](\l)
+[2． 格式转换 89](\l)
 
-[（3） Reversible 89](\l)
+[3． MMdnn转换 93](\l)
 
-[（4） Generator 89](\l)
+[4． ncnn转换 93](\l)
 
-[3． 类特殊方法 89](\l)
+[（三） 传统库 93](\l)
 
-[三、 框架&接口 89](\l)
+[1． wave 93](\l)
 
-[（一） 框架简介 89](\l)
+[2． scipy 94](\l)
 
-[1． 传统库 90](\l)
+[3． numpy 94](\l)
 
-[2． 通用框架 91](\l)
+[4． pandas 96](\l)
 
-[3． 专用框架 91](\l)
+[5． matplotlib 99](\l)
 
-[4． 边缘计算 92](\l)
+[四、 NN框架 100](\l)
 
-[5． 快捷接口 93](\l)
+[（一） Google 100](\l)
 
-[（二） 不同格式间的转换 94](\l)
+[1． Tensorflow（基础框架） 100](\l)
 
-[1． 文件格式 94](\l)
+[2． Keras（高级接口） 106](\l)
 
-[2． 格式转换 95](\l)
+[（二） Facebook 111](\l)
 
-[3． MMdnn转换 98](\l)
+[1． Pytorch（基础框架） 111](\l)
 
-[4． ncnn转换 98](\l)
+[2． torchvision（图像处理） 115](\l)
 
-[（三） 传统库 99](\l)
+[3． Detectron（已废弃） 116](\l)
 
-[1． wave 99](\l)
+[4． Maskrcnn-benchmark（已废弃） 116](\l)
 
-[2． scipy 99](\l)
+[5． Detectron2（计算机视觉） 116](\l)
 
-[3． numpy 100](\l)
+[6． PySlowFast（视频理解） 118](\l)
 
-[4． pandas 101](\l)
+[7． Prophet（时间序列分析） 119](\l)
 
-[5． matplotlib 104](\l)
+[（三） Amazon 120](\l)
 
-[四、 NN框架 105](\l)
+[1． MXNet（基础框架） 120](\l)
 
-[（一） Google 105](\l)
+[2． Gluon（高级接口） 120](\l)
 
-[1． Tensorflow（基础框架） 105](\l)
+[3． gluoncv（图像处理） 121](\l)
 
-[2． Keras（高级接口） 111](\l)
+[4． gluonts（时间序列） 121](\l)
 
-[（二） Facebook 116](\l)
+[5． gluonnlp（自然语言处理） 121](\l)
 
-[1． Pytorch（基础框架） 116](\l)
+[（四） CUHK 121](\l)
 
-[2． torchvision（图像处理） 119](\l)
+[1． mmdetection（图像处理） 122](\l)
 
-[3． Detectron（已废弃） 121](\l)
+[2． mmsegmentation（图像分割） 122](\l)
 
-[4． Maskrcnn-benchmark（已废弃） 121](\l)
+[3． mmaction（视频理解） 123](\l)
 
-[5． Detectron2（计算机视觉） 121](\l)
+[（五） 图森未来 124](\l)
 
-[6． PySlowFast（视频理解） 123](\l)
+[1． SimpleDet（图像处理） 124](\l)
 
-[7． Prophet（时间序列分析） 123](\l)
+[（六） Hugging Face 125](\l)
 
-[（三） Amazon 124](\l)
+[1． Transformers 125](\l)
 
-[1． MXNet（基础框架） 124](\l)
+[（七） 阿里巴巴 125](\l)
 
-[2． Gluon（高级接口） 125](\l)
+[1． MNN 125](\l)
 
-[3． gluoncv（图像处理） 125](\l)
+[（八） 腾讯 125](\l)
 
-[4． gluonts（时间序列） 125](\l)
+[1． ncnn 125](\l)
 
-[5． gluonnlp（自然语言处理） 148](\l)
+[（九） Redmon 126](\l)
 
-[（四） CUHK 148](\l)
+[1． Darknet 126](\l)
 
-[1． mmdetection（图像处理） 148](\l)
+[（十） 其它 129](\l)
 
-[2． mmsegmentation（图像分割） 149](\l)
+[1． PyVideoResearch 129](\l)
 
-[3． mmaction（视频理解） 149](\l)
+[2． Theano 129](\l)
 
-[（五） 图森未来 151](\l)
+[3． DNN (OpenCV) 129](\l)
 
-[1． SimpleDet（图像处理） 151](\l)
+[五、 传统机器学习（sklearn） 130](\l)
 
-[（六） Hugging Face 151](\l)
+[（一） sklearn 131](\l)
 
-[1． Transformers 152](\l)
+[（二） 概念 132](\l)
 
-[（七） 阿里巴巴 152](\l)
+[1． 监督学习 132](\l)
 
-[1． MNN 152](\l)
+[2． 分类 133](\l)
 
-[（八） 腾讯 152](\l)
+[3． 回归分析 133](\l)
 
-[1． ncnn 152](\l)
+[4． 无监督学习 133](\l)
 
-[（九） Redmon 152](\l)
+[5． 聚类分析 134](\l)
 
-[1． Darknet 152](\l)
+[6． 强化学习 134](\l)
 
-[（十） 其它 155](\l)
+[7． L1/L2正则化 135](\l)
 
-[1． PyVideoResearch 155](\l)
+[8． 感知器 135](\l)
 
-[2． Theano 156](\l)
+[9． 隐马尔可夫模型 135](\l)
 
-[3． sklearn 156](\l)
+[10． 神经网络 136](\l)
 
-[4． DNN (OpenCV) 156](\l)
+[（三） 算法 137](\l)
 
-[五、 传统图像视频处理（OpenCV） 157](\l)
+[1． 线性模型 137](\l)
 
-[（一） 基本绘图 157](\l)
+[2． 核岭回归 141](\l)
 
-[（二） 色彩空间（Colorspace） 158](\l)
+[3． SVM（支持向量机） 141](\l)
 
-[（三） 几何变换（Geometry Transformation） 159](\l)
+[4． 邻近算法（kNN） 145](\l)
 
-[1． 刚体变换（Rigid Transformation） 160](\l)
+[5． k-means 146](\l)
 
-[2． 仿射变换（Affine Transformation） 161](\l)
+[6． 高斯过程 147](\l)
 
-[3． 投影变换（Projective Transformation） 161](\l)
+[7． 朴素贝叶斯方法 147](\l)
 
-[4． OpenCV Python 168](\l)
+[8． 决策树 150](\l)
 
-[（四） 阈值处理（Threshold） 169](\l)
+[六、 传统图像视频处理（opencv） 151](\l)
 
-[1． 大津算法（Otsu's Method） 169](\l)
+[（一） 基本绘图 151](\l)
 
-[（五） 过滤器-模糊 170](\l)
+[（二） 色彩空间（Colorspace） 152](\l)
 
-[1． 2D卷积（2D Convolution） 170](\l)
+[（三） 几何变换（Geometry Transformation） 153](\l)
 
-[2． 均值模糊（Averaging Blur） 170](\l)
+[1． 刚体变换（Rigid Transformation） 154](\l)
 
-[3． 中值模糊（Median Blur） 171](\l)
+[2． 仿射变换（Affine Transformation） 155](\l)
 
-[4． 高斯模糊（Gaussian Blur） 171](\l)
+[3． 投影变换（Projective Transformation） 155](\l)
 
-[5． 双边滤波（Bilateral Filter） 172](\l)
+[4． OpenCV Python 162](\l)
 
-[（六） 形态变换（Morphological Transformation） 173](\l)
+[（四） 阈值处理（Threshold） 163](\l)
 
-[（七） 图像导数（Image Gradient） 174](\l)
+[1． 大津算法（Otsu's Method） 163](\l)
 
-[1． 索伯算子（Sobel Operator） 174](\l)
+[（五） 过滤器-模糊 164](\l)
 
-[2． Scharr算子（Scharr Operator） 175](\l)
+[1． 2D卷积（2D Convolution） 164](\l)
 
-[3． 拉普拉斯算子（Laplace Operator） 176](\l)
+[2． 均值模糊（Averaging Blur） 164](\l)
 
-[（八） Canny边缘检测算法 177](\l)
+[3． 中值模糊（Median Blur） 165](\l)
 
-[1． Douglas-Peucker算法（TODO） 178](\l)
+[4． 高斯模糊（Gaussian Blur） 165](\l)
 
-[（九） 图像金字塔（Image Pyramids） 178](\l)
+[5． 双边滤波（Bilateral Filter） 166](\l)
 
-[（十） 轮廓（Contour） 179](\l)
+[（六） 形态变换（Morphological Transformation） 167](\l)
 
-[1． 矩（moment） 179](\l)
+[（七） 图像导数（Image Gradient） 168](\l)
 
-[（十一） 直方图（Histogram） 181](\l)
+[1． 索伯算子（Sobel Operator） 168](\l)
 
-[（十二） 模板匹配（Matching Template） 181](\l)
+[2． Scharr算子（Scharr Operator） 169](\l)
 
-[（十三） 霍夫变换（Hough Transform） 182](\l)
+[3． 拉普拉斯算子（Laplace Operator） 170](\l)
 
-[（十四） Harris角检测器（TODO） 183](\l)
+[（八） Canny边缘检测算法 171](\l)
 
-[（十五） SIFT算法（TODO） 183](\l)
+[1． Douglas-Peucker算法（TODO） 172](\l)
 
-[（十六） SURF算法（TODO） 183](\l)
+[（九） 图像金字塔（Image Pyramids） 173](\l)
 
-[（十七） 图像分割（Image Segmentation） 183](\l)
+[（十） 轮廓（Contour） 173](\l)
 
-[（十八） 视频处理（Video Process） 183](\l)
+[1． 矩（moment） 173](\l)
 
-[1． 均值漂移（mean-shift） 183](\l)
+[（十一） 直方图（Histogram） 175](\l)
 
-[2． 光流 184](\l)
+[（十二） 模板匹配（Matching Template） 175](\l)
 
-[（十九） 相机标定（Camera Calibration） 184](\l)
+[（十三） 霍夫变换（Hough Transform） 176](\l)
 
-[1． 光心、焦距、焦点 184](\l)
+[（十四） Harris角检测器（TODO） 177](\l)
 
-[2． 坐标系 184](\l)
+[（十五） SIFT算法（TODO） 177](\l)
 
-[3． 畸变（distortion） 187](\l)
+[（十六） SURF算法（TODO） 177](\l)
 
-[4． 相机标定 189](\l)
+[（十七） 图像分割（Image Segmentation） 177](\l)
 
-[5． Opencv Python 191](\l)
+[（十八） 视频处理（Video Process） 177](\l)
 
-[六、 网络构成 193](\l)
+[1． 均值漂移（mean-shift） 177](\l)
 
-[（一） DNN及CNN微结构 193](\l)
+[2． 光流 178](\l)
 
-[1． 全连接层（Dense） 193](\l)
+[（十九） 相机标定（Camera Calibration） 178](\l)
 
-[2． 池化层（Pooling） 194](\l)
+[1． 光心、焦距、焦点 178](\l)
 
-[3． 全局池化层 194](\l)
+[2． 坐标系 178](\l)
 
-[4． 反池化层 194](\l)
+[3． 畸变（distortion） 181](\l)
 
-[5． 常规卷积层 195](\l)
+[4． 相机标定 183](\l)
 
-[6． 本地卷积层 196](\l)
+[5． Opencv Python 185](\l)
 
-[7． Dropout层 196](\l)
+[七、 网络构成 188](\l)
 
-[8． Deconv（ZFNet） 196](\l)
+[（一） DNN及CNN微结构 188](\l)
 
-[9． Group Conv（AlexNet） 197](\l)
+[1． 全连接层（Dense） 188](\l)
 
-[10． Depthwise Separable卷积（Xception） 197](\l)
+[2． 池化层（Pooling） 189](\l)
 
-[11． 3\*3卷积核（VGGNet） 199](\l)
+[3． 全局池化层 189](\l)
 
-[12． 1\*1卷积核 200](\l)
+[4． 反池化层 189](\l)
 
-[13． Spatial Separable卷积 200](\l)
+[5． 常规卷积层 190](\l)
 
-[14． 带孔卷积 201](\l)
+[6． 本地卷积层 191](\l)
 
-[15． Bottleneck结构 201](\l)
+[7． Dropout层 191](\l)
 
-[16． Residual Block（ResNet） 202](\l)
+[8． Deconv（ZFNet） 191](\l)
 
-[17． Inverted Residual Block（MobileNet V2） 203](\l)
+[9． Group Conv（AlexNet） 192](\l)
 
-[18． Linear bottleneck（MobileNet V2） 204](\l)
+[10． Depthwise Separable卷积（Xception） 192](\l)
 
-[19． Dense Block（DenseNet） 204](\l)
+[11． 3\*3卷积核（VGGNet） 194](\l)
 
-[20． Inception结构（GoogleNet） 205](\l)
+[12． 1\*1卷积核 195](\l)
 
-[21． ResNeXt结构（ResNeXt） 207](\l)
+[13． Spatial Separable卷积 195](\l)
 
-[22． Fire Module（SqueezeNet） 207](\l)
+[14． 带孔卷积 196](\l)
 
-[23． SE结构（SENet） 208](\l)
+[15． Bottleneck结构 196](\l)
 
-[24． NASNet单元（TODO） 209](\l)
+[16． Residual Block（ResNet） 197](\l)
 
-[25． AmoebaNet单元（TODO） 209](\l)
+[17． Inverted Residual Block（MobileNet V2） 198](\l)
 
-[26． SPP层（SPP-net） 209](\l)
+[18． Linear bottleneck（MobileNet V2） 199](\l)
 
-[27． RoI Pooling层（Fast R-CNN） 210](\l)
+[19． Dense Block（DenseNet） 199](\l)
 
-[（二） CNN结构 210](\l)
+[20． Inception结构（GoogleNet） 200](\l)
 
-[（三） RNN结构 211](\l)
+[21． ResNeXt结构（ResNeXt） 202](\l)
 
-[1． 通用结构 211](\l)
+[22． Fire Module（SqueezeNet） 202](\l)
 
-[2． 变种结构 213](\l)
+[23． SE结构（SENet） 203](\l)
 
-[3． 双向RNN 217](\l)
+[24． NASNet单元（TODO） 204](\l)
 
-[（四） RNN微结构 217](\l)
+[25． AmoebaNet单元（TODO） 205](\l)
 
-[1． 基本RNN单元 218](\l)
+[26． SPP层（SPP-net） 205](\l)
 
-[2． LSTM单元 219](\l)
+[27． RoI Pooling层（Fast R-CNN） 205](\l)
 
-[3． GRU单元 221](\l)
+[（二） CNN结构 206](\l)
 
-[（五） 注意力机制（Attention） 221](\l)
+[（三） RNN结构 206](\l)
 
-[1． CNN中的Attention 224](\l)
+[1． 通用结构 207](\l)
 
-[2． RNN中的Attention (201409) 224](\l)
+[2． 变种结构 208](\l)
 
-[3． Soft & Hard attention (201502) 225](\l)
+[3． 双向RNN 213](\l)
 
-[4． Global & Local Attention (201508) 226](\l)
+[（四） RNN微结构 213](\l)
 
-[5． Transformer & Self-Attention (201706) 227](\l)
+[1． 基本RNN单元 213](\l)
 
-[6． Non-Local Network (201711） 227](\l)
+[2． LSTM单元 214](\l)
 
-[（六） GAN结构 229](\l)
+[3． GRU单元 216](\l)
 
-[（七） 激活函数（Activation Function） 229](\l)
+[（五） 注意力机制（Attention） 217](\l)
 
-[1． sigmoid函数 232](\l)
+[1． CNN中的Attention 219](\l)
 
-[2． tanh函数 233](\l)
+[2． RNN中的Attention (201409) 220](\l)
 
-[3． ReLU函数系列 233](\l)
+[3． Soft & Hard attention (201502) 221](\l)
 
-[4． softmax函数 235](\l)
+[4． Global & Local Attention (201508) 222](\l)
 
-[5． softsign函数 235](\l)
+[5． Transformer & Self-Attention (201706) 223](\l)
 
-[（八） 损失函数（Loss Function） 236](\l)
+[6． Non-Local Network (201711） 223](\l)
 
-[1． MSE（均方误差） 236](\l)
+[（六） GAN结构 225](\l)
 
-[2． RMSE 236](\l)
+[（七） 激活函数（Activation Function） 226](\l)
 
-[3． MAE（平均绝对误差） 236](\l)
+[1． sigmoid函数（logistic函数） 228](\l)
 
-[4． MAPE 237](\l)
+[2． tanh函数 229](\l)
 
-[5． sMAPE 237](\l)
+[3． ReLU函数系列 229](\l)
 
-[6． MASE 237](\l)
+[4． softmax函数 231](\l)
 
-[7． MSIS 238](\l)
+[5． softsign函数 231](\l)
 
-[8． ND 238](\l)
+[（八） 损失函数（Loss Function） 232](\l)
 
-[9． NRMSE 238](\l)
+[1． MSE（均方误差） 232](\l)
 
-[10． OWA 238](\l)
+[2． RMSE 232](\l)
 
-[11． Cross-entropy Loss（交叉熵损失） 238](\l)
+[3． MAE（平均绝对误差） 232](\l)
 
-[12． Softmax Loss 239](\l)
+[4． MAPE 233](\l)
 
-[13． Triplet Loss（FaceNet） 239](\l)
+[5． sMAPE 233](\l)
 
-[14． Contrastive Loss (TODO) 240](\l)
+[6． MASE 233](\l)
 
-[15． Center Loss（2016） 240](\l)
+[7． MSIS 234](\l)
 
-[16． A-Softmax Loss（SphereFace） 242](\l)
+[8． ND 234](\l)
 
-[17． Focal Loss (RetinaNet) 243](\l)
+[9． NRMSE 234](\l)
 
-[（九） 优化方法（Optimizer） 244](\l)
+[10． OWA 234](\l)
 
-[1． 梯度下降法（GD） 245](\l)
+[11． Cross-entropy Loss（交叉熵损失） 234](\l)
 
-[2． 动量法（Momentum） 246](\l)
+[12． Softmax Loss 235](\l)
 
-[3． NAG 247](\l)
+[13． Triplet Loss（FaceNet） 235](\l)
 
-[4． AdaGrad 248](\l)
+[14． Contrastive Loss (TODO) 236](\l)
 
-[5． RMSprop 248](\l)
+[15． Center Loss（2016） 236](\l)
 
-[6． Adam 248](\l)
+[16． A-Softmax Loss（SphereFace） 238](\l)
 
-[（十） 标准化方法（Normalization） 249](\l)
+[17． Focal Loss (RetinaNet) 239](\l)
 
-[1． LRN (AlexNet) 250](\l)
+[（九） 优化方法（Optimizer） 241](\l)
 
-[2． Min-max Normalization 250](\l)
+[1． 梯度下降法（GD） 241](\l)
 
-[3． Z-score Normalization 250](\l)
+[2． 动量法（Momentum） 242](\l)
 
-[4． L1 Normalization 251](\l)
+[3． NAG 243](\l)
 
-[5． L2 Normalization 251](\l)
+[4． AdaGrad 244](\l)
 
-[6． Batch Normalization (201502) 251](\l)
+[5． RMSprop 244](\l)
 
-[7． Layer Normalization (201607) 251](\l)
+[6． Adam 244](\l)
 
-[8． Instance Normalization (201607) 252](\l)
+[（十） 标准化方法（Normalization） 245](\l)
 
-[9． Group Normalization (201803) 253](\l)
+[1． LRN (AlexNet) 246](\l)
 
-[10． Switchable Normalization (201806) 253](\l)
+[2． Min-max Normalization 246](\l)
 
-[七、 研究方向：图像 255](\l)
+[3． Z-score Normalization 247](\l)
 
-[（一） 图像分类（Image Classification） 256](\l)
+[4． L1 Normalization 247](\l)
 
-[1． 衡量标准 257](\l)
+[5． L2 Normalization 247](\l)
 
-[2． 数据集 258](\l)
+[6． Batch Normalization (201502) 247](\l)
 
-[3． 代码 260](\l)
+[7． Layer Normalization (201607) 248](\l)
 
-[4． LeNet（1998） 260](\l)
+[8． Instance Normalization (201607) 248](\l)
 
-[5． AlexNet（2012） 261](\l)
+[9． Group Normalization (201803) 249](\l)
 
-[6． ZFNet（201311） 262](\l)
+[10． Switchable Normalization (201806) 250](\l)
 
-[7． VGGNet（201409） 263](\l)
+[八、 研究方向：图像 251](\l)
 
-[8． GoogLeNet（201409） 264](\l)
+[（一） 图像分类（Image Classification） 252](\l)
 
-[9． ResNet（201509） 266](\l)
+[1． 衡量标准 253](\l)
 
-[10． SqueezeNet（201602） 266](\l)
+[2． 数据集 254](\l)
 
-[11． DenseNet（201608） 267](\l)
+[3． 代码 256](\l)
 
-[12． Xception（201610） 268](\l)
+[4． LeNet（1998） 256](\l)
 
-[13． ResNeXt (201611) 269](\l)
+[5． AlexNet（2012） 257](\l)
 
-[14． MobileNet V1（201704） 269](\l)
+[6． ZFNet（201311） 258](\l)
 
-[15． NasNet (201707) 271](\l)
+[7． VGGNet（201409） 259](\l)
 
-[16． ShuffleNet V1 (201707) 271](\l)
+[8． GoogLeNet（201409） 260](\l)
 
-[17． SENet（201709） 272](\l)
+[9． ResNet（201509） 262](\l)
 
-[18． MobileNet V2（201801） 273](\l)
+[10． SqueezeNet（201602） 263](\l)
 
-[19． MNasNet (201807)(TODO) 274](\l)
+[11． DenseNet（201608） 264](\l)
 
-[20． ShuffleNet V2 (201807) 274](\l)
+[12． Xception（201610） 264](\l)
 
-[21． EfficientNet (201905)(TODO) 275](\l)
+[13． ResNeXt (201611) 265](\l)
 
-[22． RegNet (TODO) 276](\l)
+[14． MobileNet V1（201704） 266](\l)
 
-[（二） 目标检测（Object Detection） 276](\l)
+[15． NasNet (201707) 267](\l)
 
-[1． 衡量标准 279](\l)
+[16． ShuffleNet V1 (201707) 268](\l)
 
-[2． 数据集 281](\l)
+[17． SENet（201709） 269](\l)
 
-[3． 代码 284](\l)
+[18． MobileNet V2（201801） 270](\l)
 
-[4． R-CNN系列 284](\l)
+[19． MNasNet (201807)(TODO) 270](\l)
 
-[5． YOLO系列 289](\l)
+[20． ShuffleNet V2 (201807) 271](\l)
 
-[6． SSD（201512） 298](\l)
+[21． EfficientNet (201905)(TODO) 272](\l)
 
-[7． FPN (201612)(TODO) 300](\l)
+[22． RegNet (TODO) 272](\l)
 
-[8． RetinaNet（201708） 300](\l)
+[（二） 目标检测（Object Detection） 273](\l)
 
-[9． MaskX R-CNN (201711)(TODO) 301](\l)
+[1． 衡量标准 276](\l)
 
-[10． CenterNet (201904)(TODO) 301](\l)
+[2． 数据集 278](\l)
 
-[11． EfficientDet (201911)(TODO) 301](\l)
+[3． 代码 281](\l)
 
-[（三） 图像分割（Image Segmentation） 301](\l)
+[4． R-CNN系列 281](\l)
 
-[1． FCN（201411） 302](\l)
+[5． YOLO系列 286](\l)
 
-[2． SegNet（201511） 303](\l)
+[6． SSD（201512） 295](\l)
 
-[3． DeepLab系列(TODO) 304](\l)
+[7． FPN (201612)(TODO) 297](\l)
 
-[4． Mask R-CNN（201703） 305](\l)
+[8． RetinaNet（201708） 298](\l)
 
-[5． PointRend（201912）(TODO) 305](\l)
+[9． MaskX R-CNN (201711)(TODO) 298](\l)
 
-[（四） 人脸识别和建模（Face Recognition） 305](\l)
+[10． CenterNet (201904)(TODO) 298](\l)
 
-[1． 数据集 307](\l)
+[11． EfficientDet (201911)(TODO) 298](\l)
 
-[2． 代码 310](\l)
+[（三） 图像分割（Image Segmentation） 299](\l)
 
-[3． DeepFace（201406） 310](\l)
+[1． FCN（201411） 300](\l)
 
-[4． DeepID系列（2014） 311](\l)
+[2． SegNet（201511） 301](\l)
 
-[5． FaceNet（201503） 313](\l)
+[3． DeepLab系列(TODO) 301](\l)
 
-[6． MTCNN（201604） 313](\l)
+[4． Mask R-CNN（201703） 302](\l)
 
-[7． CenterLoss（2016） 314](\l)
+[5． PointRend（201912）(TODO) 303](\l)
 
-[8． SphereFace（201704） 314](\l)
+[（四） 人脸识别和建模（Face Recognition） 303](\l)
 
-[9． FacePoseNet（201708） 314](\l)
+[1． 数据集 304](\l)
 
-[10． CosFace（201801） 315](\l)
+[2． 代码 307](\l)
 
-[11． ArcFace/InsightFace（201801） 315](\l)
+[3． DeepFace（201406） 307](\l)
 
-[12． SeqFace（201803） 315](\l)
+[4． DeepID系列（2014） 308](\l)
 
-[13． MobileFaceNets（201804） 315](\l)
+[5． FaceNet（201503） 310](\l)
 
-[（五） 人体姿态估计（Pose Estimation） 316](\l)
+[6． MTCNN（201604） 311](\l)
 
-[1． 数据集 317](\l)
+[7． CenterLoss（2016） 311](\l)
 
-[2． CPM (201602) 317](\l)
+[8． SphereFace（201704） 312](\l)
 
-[3． HourGlass (201603) 318](\l)
+[9． FacePoseNet（201708） 312](\l)
 
-[4． OpenPose (201611) 318](\l)
+[10． CosFace（201801） 312](\l)
 
-[5． CPN (201711) 318](\l)
+[11． ArcFace/InsightFace（201801） 312](\l)
 
-[6． MSPN (201901) 319](\l)
+[12． SeqFace（201803） 312](\l)
 
-[7． HRNet (201902) 319](\l)
+[13． MobileFaceNets（201804） 312](\l)
 
-[八、 研究方向：视频 320](\l)
+[（五） 人体姿态估计（Pose Estimation） 313](\l)
 
-[（一） 行为识别（Video Action Classification） 320](\l)
+[1． 数据集 314](\l)
 
-[1． 数据集 322](\l)
+[2． CPM (201602) 315](\l)
 
-[2． 衡量标准 324](\l)
+[3． HourGlass (201603) 315](\l)
 
-[3． 传统方法 324](\l)
+[4． OpenPose (201611) 315](\l)
 
-[4． Two-Stream 324](\l)
+[5． CPN (201711) 316](\l)
 
-[5． 3D Conv 329](\l)
+[6． MSPN (201901) 316](\l)
 
-[6． Skeleton-based 335](\l)
+[7． HRNet (201902) 317](\l)
 
-[7． LSTM-based 336](\l)
+[九、 研究方向：视频 318](\l)
 
-[（二） 时序行为识别（Temporal Action Recognition） 336](\l)
+[（一） 行为识别（Video Action Classification） 318](\l)
 
-[1． 数据集 337](\l)
+[1． 数据集 320](\l)
 
-[2． 衡量标准 337](\l)
+[2． 衡量标准 322](\l)
 
-[3． SSN 337](\l)
+[3． 传统方法 322](\l)
 
-[（三） 时空行为识别 338](\l)
+[4． Two-Stream 322](\l)
 
-[1． 数据集 338](\l)
+[5． 3D Conv 327](\l)
 
-[（四） 视频字幕（Video Captioning） 338](\l)
+[6． Skeleton-based 333](\l)
 
-[1． 数据集 338](\l)
+[7． LSTM-based 334](\l)
 
-[（五） 视频问答（Video QA） 338](\l)
+[（二） 时序行为识别（Temporal Action Recognition） 334](\l)
 
-[1． Zhou (201804) 339](\l)
+[1． 数据集 335](\l)
 
-[2． Video-BERT (201904) 339](\l)
+[2． 衡量标准 335](\l)
 
-[（六） 视频目标跟踪（Video Object Tracking） 339](\l)
+[3． SSN 336](\l)
 
-[1． 衡量标准 340](\l)
+[（三） 时空行为识别 336](\l)
+
+[1． 数据集 336](\l)
+
+[（四） 视频字幕（Video Captioning） 336](\l)
+
+[1． 数据集 336](\l)
+
+[（五） 视频问答（Video QA） 337](\l)
+
+[1． Zhou (201804) 337](\l)
+
+[2． Video-BERT (201904) 337](\l)
+
+[（六） 视频目标跟踪（Video Object Tracking） 337](\l)
+
+[1． 衡量标准 338](\l)
+
+[2． 数据集 339](\l)
+
+[（七） 多目标跟踪（Multiple Object Tracking） 340](\l)
+
+[1． 衡量标准 341](\l)
 
 [2． 数据集 341](\l)
 
-[（七） 多目标跟踪（Multiple Object Tracking） 341](\l)
+[3． 传统算法 342](\l)
 
-[1． 衡量标准 342](\l)
+[4． SORT (201602) 343](\l)
 
-[2． 数据集 343](\l)
+[5． DeepSORT (201703) 344](\l)
 
-[3． 传统算法 344](\l)
+[6． MOTDT (201809) 344](\l)
 
-[4． SORT (201602) 345](\l)
+[7． JDE(201909) 345](\l)
 
-[5． DeepSORT (201703) 346](\l)
+[8． FairMOT (202004) 345](\l)
 
-[6． MOTDT (201809) 346](\l)
+[（八） 行人识别（Person Recognition） 345](\l)
 
-[7． JDE(201909) 346](\l)
+[1． 数据集 346](\l)
 
-[8． FairMOT (202004) 346](\l)
+[2． MLCNN（2015ICB） 346](\l)
 
-[（八） 行人识别（Person Recognition） 347](\l)
+[3． OIM损失函数（201604） 348](\l)
 
-[1． 数据集 347](\l)
+[4． PCB和RPP（201711） 349](\l)
 
-[2． MLCNN（2015ICB） 348](\l)
+[5． Height, Color, Gender（201810） 350](\l)
 
-[3． OIM损失函数（201604） 349](\l)
+[6． st-ReID（201812） 350](\l)
 
-[4． PCB和RPP（201711） 350](\l)
+[7． DG-net（201904） 351](\l)
 
-[5． Height, Color, Gender（201810） 351](\l)
+[十、 研究方向：自然语言处理（NLP） 352](\l)
 
-[6． st-ReID（201812） 352](\l)
+[（一） 概念 352](\l)
 
-[7． DG-net（201904） 352](\l)
+[1． 语言学相关 352](\l)
 
-[九、 研究方向：自然语言处理（NLP） 353](\l)
+[2． Tokenize（分词） 353](\l)
 
-[（一） 概念 353](\l)
-
-[1． 语言学相关 353](\l)
-
-[2． Tokenize（分词） 354](\l)
-
-[3． TF-IDF 354](\l)
+[3． TF-IDF 353](\l)
 
 [4． 语言模型（LM） 354](\l)
 
 [5． n-grams（n元语法） 354](\l)
 
-[（二） 任务 355](\l)
+[（二） 任务 354](\l)
 
-[1． 语言学NLP任务分类 356](\l)
+[1． 语言学NLP任务分类 355](\l)
 
 [2． 神经网络NLP任务分类 357](\l)
 
-[（三） 衡量标准 359](\l)
+[（三） 衡量标准 358](\l)
 
-[1． Accuracy 359](\l)
+[1． Accuracy 358](\l)
 
-[2． F1-Score 359](\l)
+[2． F1-Score 358](\l)
 
-[3． BLEU 359](\l)
+[3． BLEU 358](\l)
 
-[（四） 数据集 359](\l)
+[（四） 数据集 358](\l)
 
-[1． ChnSentiCorp 359](\l)
+[1． 中文情感分析数据集汇总 358](\l)
 
-[2． SQuAD 359](\l)
+[2． 中文摘要数据集汇总 359](\l)
 
-[3． GLUE 360](\l)
+[3． ChnSentiCorp 359](\l)
 
-[4． SuperGLUE 362](\l)
+[4． SQuAD 359](\l)
 
-[5． CLUE 362](\l)
+[5． GLUE 359](\l)
 
-[（五） 框架 364](\l)
+[6． SuperGLUE 361](\l)
+
+[7． CLUE 362](\l)
+
+[（五） 框架 363](\l)
 
 [1． SpaCy 364](\l)
 
@@ -1053,7 +1073,7 @@ Forum的人应该知道我），彼时的文章和书籍很少，主要就是ULK
 
 [5． OpenNMT 365](\l)
 
-[6． ParlAI 366](\l)
+[6． ParlAI 365](\l)
 
 [7． DeepPavlov 366](\l)
 
@@ -1063,320 +1083,336 @@ Forum的人应该知道我），彼时的文章和书籍很少，主要就是ULK
 
 [10． HuggingFace Transformers 367](\l)
 
-[11． HanLP 373](\l)
+[11． HanLP 384](\l)
 
-[12． AllenNLP 373](\l)
+[12． AllenNLP 384](\l)
 
-[（六） NN：词的表征 373](\l)
+[（六） NN：词的表征 384](\l)
 
-[1． NNLM（2003） 374](\l)
+[1． NNLM（2003） 385](\l)
 
-[2． Word2Vec（201301） 375](\l)
+[2． Word2Vec（201301） 386](\l)
 
-[3． GloVe(2014) 380](\l)
+[3． GloVe(2014) 390](\l)
 
-[4． fastText(201607) 380](\l)
+[4． fastText(201607) 390](\l)
 
-[5． ELMo(201802) 381](\l)
+[5． ELMo(201802) 391](\l)
 
-[（七） NN：基于RNN 382](\l)
+[（七） NN：基于RNN 392](\l)
 
-[1． Encoder-Decoder（201406） 382](\l)
+[1． Encoder-Decoder（201406） 392](\l)
 
-[2． Seq2Seq（201409） 383](\l)
+[2． Seq2Seq（201409） 394](\l)
 
-[3． Attention机制（201409） 384](\l)
+[3． Attention机制（201409） 394](\l)
 
-[（八） NN：基于Transformer 384](\l)
+[（八） NN：基于Transformer 395](\l)
 
-[1． Transformer(201706) 385](\l)
+[1． Transformer(201706) 395](\l)
 
-[2． GPT系列 395](\l)
+[2． 自回归模型（GPT系列） 406](\l)
 
-[3． BERT系列 398](\l)
+[3． 自编码模型（BERT系列） 409](\l)
 
-[4． T5（201910） 410](\l)
+[4． T5（201910） 422](\l)
 
-[十、 研究方向：时间序列（TS） 410](\l)
+[十一、 研究方向：时间序列（TS） 422](\l)
 
-[1． 数据集 413](\l)
+[（一） 数据集 425](\l)
 
-[2． 衡量标准 413](\l)
+[（二） 衡量标准 425](\l)
 
-[（二） 传统方法及概念 413](\l)
+[（三） 传统方法及概念 425](\l)
 
-[1． AR模型 413](\l)
+[1． AR模型 425](\l)
 
-[2． VAR模型 414](\l)
+[2． VAR模型 426](\l)
 
-[3． MA模型 415](\l)
+[3． MA模型 426](\l)
 
-[4． 白噪声 415](\l)
+[4． 白噪声 427](\l)
 
-[5． ARMA模型 415](\l)
+[5． ARMA模型 427](\l)
 
-[6． ARIMA模型 416](\l)
+[6． ARIMA模型 428](\l)
 
-[7． ARFIMA模型 417](\l)
+[7． ARFIMA模型 429](\l)
 
-[8． ARCH模型 417](\l)
+[8． ARCH模型 429](\l)
 
-[9． DTW 417](\l)
+[9． DTW 429](\l)
 
-[10． COTE 418](\l)
+[10． COTE 430](\l)
 
-[11． HIVE-COTE (2016ICDM) 418](\l)
+[11． HIVE-COTE (2016ICDM) 430](\l)
 
-[（三） 神经网络方法 418](\l)
+[（四） 神经网络方法 430](\l)
 
-[1． WaveNet (201609) (TODO) 418](\l)
+[1． WaveNet (201609) (TODO) 430](\l)
 
-[2． DeepAR (201704) 418](\l)
+[2． DeepAR (201704) 431](\l)
 
-[3． Deep state(201800) (TODO) 419](\l)
+[3． Deep state(201800) (TODO) 432](\l)
 
-[4． Deep factor (201905) (TODO) 419](\l)
+[4． ForGAN（201903） 432](\l)
 
-[十一、 实践应用 421](\l)
+[5． Deep Factor (201905) (TODO) 432](\l)
 
-[（一） 车牌识别 421](\l)
+[6． Informer（202012） 432](\l)
 
-[1． 数据集 421](\l)
+[（五） 框架 433](\l)
 
-[2． 代码：EasyPR 422](\l)
+[1． gluonts 433](\l)
 
-[3． 代码：HyperLPR 422](\l)
+[十二、 实践应用 457](\l)
 
-[（二） 无人机识别 422](\l)
+[（一） 车牌识别 457](\l)
 
-[1． 数据集 422](\l)
+[1． 数据集 457](\l)
 
-[（三） 视频监控异常检测 422](\l)
+[2． 代码：EasyPR 458](\l)
+
+[3． 代码：HyperLPR 458](\l)
+
+[（二） 无人机识别 458](\l)
+
+[1． 数据集 458](\l)
+
+[（三） 视频监控异常检测 458](\l)
 
 [1． Real-World Anomaly Detection in Surveillance Videos (201801) (TODO)
-423](\l)
+459](\l)
 
-[（四） 红绿灯识别 423](\l)
+[（四） 红绿灯识别 459](\l)
 
-[1． 数据集 423](\l)
+[1． 数据集 459](\l)
 
-[2． 基于OpenCV的红绿灯识别 424](\l)
+[2． 基于OpenCV的红绿灯识别 460](\l)
 
-[3． 用深度学习识别交通灯 424](\l)
+[3． 用深度学习识别交通灯 460](\l)
 
-[十二、 元学习 424](\l)
+[十三、 元学习 460](\l)
 
-[（一） 迁移学习 424](\l)
+[（一） 迁移学习 461](\l)
 
-[1． Fine-tuning 425](\l)
+[1． Fine-tuning 461](\l)
 
-[（二） 知识蒸馏 425](\l)
+[（二） 知识蒸馏 461](\l)
 
-[（三） 集成学习 425](\l)
+[（三） 集成学习 461](\l)
 
-[1． Boosting 426](\l)
+[1． Boosting 462](\l)
 
-[（四） 模型压缩 426](\l)
+[2． Bagging 463](\l)
 
-[1． 剪枝 427](\l)
+[3． 随机森林 463](\l)
 
-[2． 量化 428](\l)
+[（四） 模型压缩 463](\l)
 
-[（五） AutoML 429](\l)
+[1． 剪枝 463](\l)
 
-[1． AutoKeras(开源) 431](\l)
+[2． 量化 465](\l)
 
-[2． NNI（Microsoft开源） 432](\l)
+[（五） AutoML 466](\l)
 
-[3． Cloud AutoML（Google） 435](\l)
+[1． AutoKeras(开源) 468](\l)
 
-[4． AutoGluon（Amazon） 436](\l)
+[2． NNI（Microsoft开源） 469](\l)
 
-[5． 算法：NAS 437](\l)
+[3． Cloud AutoML（Google） 472](\l)
 
-[6． 算法：特征工程 442](\l)
+[4． AutoGluon（Amazon） 473](\l)
 
-[（六） 多示例学习 442](\l)
+[5． 算法：NAS 474](\l)
 
-[（七） 半监督学习 442](\l)
+[6． 算法：特征工程 479](\l)
 
-[十三、 硬件支持 443](\l)
+[（六） 多示例学习 479](\l)
 
-[（一） GPGPU 443](\l)
+[（七） 半监督学习 480](\l)
 
-[（二） OpenCL 443](\l)
+[十四、 硬件支持 481](\l)
 
-[（三） CUDA（NVIDIA） 444](\l)
+[（一） GPGPU 481](\l)
 
-[（四） cuDNN（NVIDIA） 444](\l)
+[（二） OpenCL 481](\l)
 
-[（五） TPU（Google） 444](\l)
+[（三） CUDA（NVIDIA） 482](\l)
 
-[（六） Linux下Nvidia/CUDA/cuDNN的安装 444](\l)
+[（四） cuDNN（NVIDIA） 482](\l)
 
-[1． NVidia驱动 445](\l)
+[（五） TPU（Google） 482](\l)
 
-[2． CUDA 445](\l)
+[（六） Linux下Nvidia/CUDA/cuDNN的安装 482](\l)
 
-[3． CuDNN 446](\l)
+[1． NVidia驱动 483](\l)
 
-[（七） Keras中GPU/CPU的切换 447](\l)
+[2． CUDA 484](\l)
 
-[十四、 Nvidia GPU 448](\l)
+[3． CuDNN 484](\l)
 
-[（一） 图形渲染流水线 448](\l)
+[（七） Keras中GPU/CPU的切换 485](\l)
 
-[1． 应用程序阶段 449](\l)
+[十五、 Nvidia GPU 486](\l)
 
-[2． 几何阶段 449](\l)
+[（一） 图形渲染流水线 486](\l)
 
-[3． 光栅化阶段 & 像素处理 452](\l)
+[1． 应用程序阶段 487](\l)
 
-[（二） GPU的构成 454](\l)
+[2． 几何阶段 487](\l)
 
-[1． 着色器 454](\l)
+[3． 光栅化阶段 & 像素处理 490](\l)
 
-[2． 统一着色器/流处理器 455](\l)
+[（二） GPU的构成 492](\l)
 
-[3． CUDA核心 455](\l)
+[1． 着色器 492](\l)
 
-[4． 纹理单元 456](\l)
+[2． 统一着色器/流处理器 493](\l)
 
-[5． 光栅单元 456](\l)
+[3． CUDA核心 493](\l)
 
-[6． 光线追踪核心 456](\l)
+[4． 纹理单元 494](\l)
 
-[7． 张量核心 456](\l)
+[5． 光栅单元 494](\l)
 
-[8． GPU大核 456](\l)
+[6． 光线追踪核心 494](\l)
 
-[（三） NVidia微架构 (Microarchitecture) 459](\l)
+[7． 张量核心 494](\l)
 
-[1． Pascal架构 459](\l)
+[8． GPU大核 494](\l)
 
-[2． Volta架构 459](\l)
+[（三） NVidia微架构 (Microarchitecture) 497](\l)
 
-[3． Turing架构 459](\l)
+[1． Pascal架构 497](\l)
 
-[4． Ampere架构 460](\l)
+[2． Volta架构 497](\l)
 
-[（四） NVidia产品系列及型号 460](\l)
+[3． Turing架构 498](\l)
 
-[1． GeForce 460](\l)
+[4． Ampere架构 498](\l)
 
-[2． Quadro 465](\l)
+[（四） NVidia产品系列及型号 498](\l)
 
-[3． Tesla 465](\l)
+[1． GeForce 498](\l)
 
-[（五） API 466](\l)
+[2． Quadro 503](\l)
 
-[1． DirectX 466](\l)
+[3． Tesla 503](\l)
 
-[2． OpenGL 467](\l)
+[（五） API 504](\l)
 
-[3． OpenGL ES 468](\l)
+[1． DirectX 504](\l)
 
-[4． Mesa 468](\l)
+[2． OpenGL 505](\l)
 
-[5． Vulkan 468](\l)
+[3． OpenGL ES 506](\l)
 
-[十五、 边缘计算 469](\l)
+[4． Mesa 506](\l)
 
-[（一） 达芬奇NPU（华为）(TODO) 469](\l)
+[5． Vulkan 506](\l)
 
-[（二） 寒武纪（寒武纪） 469](\l)
+[十六、 边缘计算 507](\l)
 
-[（三） TensorRT（NVIDIA） 469](\l)
+[（一） 达芬奇NPU（华为）(TODO) 507](\l)
 
-[（四） ncnn（腾讯） 469](\l)
+[（二） 寒武纪（寒武纪） 507](\l)
 
-[（五） TNN（腾讯） 470](\l)
+[（三） TensorRT（NVIDIA） 507](\l)
 
-[（六） MNN（阿里） 470](\l)
+[（四） ncnn（腾讯） 507](\l)
 
-[（七） mace（小米） 470](\l)
+[（五） TNN（腾讯） 508](\l)
 
-[（八） Paddle-Lite（百度） 470](\l)
+[（六） MNN（阿里） 508](\l)
 
-[（九） Google 470](\l)
+[（七） mace（小米） 508](\l)
 
-[1． TensorFlow Lite（Google） 471](\l)
+[（八） Paddle-Lite（百度） 508](\l)
 
-[2． NNAPI（Google） 476](\l)
+[（九） Google 509](\l)
 
-[（十） Facebook 477](\l)
+[1． TensorFlow Lite（Google） 509](\l)
 
-[1． Pytorch Mobile (Facebook) 477](\l)
+[2． NNAPI（Google） 514](\l)
 
-[2． QNNPACK (Facebook) 477](\l)
+[（十） Facebook 515](\l)
 
-[（十一） ARM 478](\l)
+[1． Pytorch Mobile (Facebook) 515](\l)
 
-[1． 指令集/架构/核心 478](\l)
+[2． QNNPACK (Facebook) 516](\l)
 
-[2． big.LITTLE (ARM) 483](\l)
+[（十一） ARM 516](\l)
 
-[3． ARM NN（ARM） 483](\l)
+[1． 指令集/架构/核心 516](\l)
 
-[4． Neon(ARM) 485](\l)
+[2． big.LITTLE (ARM) 521](\l)
 
-[（十二） Vulkan 485](\l)
+[3． ARM NN（ARM） 521](\l)
 
-[（十三） NNIE(TODO) 485](\l)
+[4． Neon(ARM) 523](\l)
 
-[（十四） AidLearning 485](\l)
+[（十二） Vulkan 523](\l)
 
-[十六、 其它 487](\l)
+[（十三） NNIE(TODO) 523](\l)
 
-[（一） NN上的工作 487](\l)
+[（十四） AidLearning 523](\l)
 
-[（二） 神经网络类型 488](\l)
+[十七、 其它 525](\l)
 
-[1． 多层感知机（MLP） 488](\l)
+[（一） NN上的工作 525](\l)
 
-[2． 卷积神经网络（CNN） 488](\l)
+[（二） 神经网络类型 526](\l)
 
-[3． 递归神经网络（RNN） 488](\l)
+[1． 多层感知机（MLP） 526](\l)
 
-[4． 生成对抗网络（GAN） 489](\l)
+[2． 卷积神经网络（CNN） 526](\l)
 
-[5． 受限玻尔兹曼机（RBM） 489](\l)
+[3． 递归神经网络（RNN） 526](\l)
 
-[6． 深度置信网络（DBN） 490](\l)
+[4． 生成对抗网络（GAN） 527](\l)
 
-[（三） 神经网络可视化 490](\l)
+[5． 受限玻尔兹曼机（RBM） 527](\l)
 
-[1． 模型可视化 491](\l)
+[6． 深度置信网络（DBN） 528](\l)
 
-[2． 训练可视化 492](\l)
+[（三） 神经网络可视化 528](\l)
 
-[3． 卷积核/特征图可视化 492](\l)
+[1． 模型可视化 529](\l)
 
-[（四） 相关学习资料 493](\l)
+[2． 训练可视化 530](\l)
 
-[1． 视频 493](\l)
+[3． 卷积核/特征图可视化 530](\l)
 
-[2． 课程 493](\l)
+[（四） 相关学习资料 531](\l)
 
-[3． 电子书 493](\l)
+[1． 视频 531](\l)
 
-[（五） 著名人士 (TODO) 494](\l)
+[2． 课程 531](\l)
 
-[1． Michael Jordan 494](\l)
+[3． 电子书 531](\l)
 
-[2． Bengio 494](\l)
+[（五） 著名人士 (TODO) 532](\l)
 
-[3． Hinton 494](\l)
+[1． Bayers（贝叶斯） 532](\l)
 
-[4． Yann LeCun 494](\l)
+[2． 马尔可夫 532](\l)
 
-[5． 李飞飞 494](\l)
+[3． Michael Jordan 532](\l)
 
-[6． 吴恩达 494](\l)
+[4． Bengio 532](\l)
 
-[7． Ian Goodfellow 494](\l)
+[5． Hinton 532](\l)
 
-[8． 汤晓欧 494](\l)
+[6． Yann LeCun 532](\l)
+
+[7． 李飞飞 532](\l)
+
+[8． 吴恩达 532](\l)
+
+[9． Ian Goodfellow 532](\l)
+
+[10． 汤晓欧 532](\l)
 
 概念&定义
 =========
@@ -6639,7 +6675,8 @@ state-of-the-art)的NLP技术，而非困窘于训练资源的匮乏。
 
 参考《[[边缘计算 \> MNN]{.underline}](\l)》
 
-### 腾讯
+腾讯
+----
 
 ### ncnn
 
